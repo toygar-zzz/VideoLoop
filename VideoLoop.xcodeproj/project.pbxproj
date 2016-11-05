@@ -11,7 +11,13 @@
 		C36BB2E71DCE309100D07F7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36BB2E61DCE309100D07F7A /* ViewController.swift */; };
 		C36BB2FA1DCE309200D07F7A /* VideoLoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36BB2F91DCE309200D07F7A /* VideoLoopTests.swift */; };
 		C36BB3051DCE309200D07F7A /* VideoLoopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36BB3041DCE309200D07F7A /* VideoLoopUITests.swift */; };
-		C38F97281DCE329C00BD113D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C38F97271DCE329C00BD113D /* Default-568h@2x.png */; };
+		C38F972C1DCE384100BD113D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C38F972B1DCE384100BD113D /* Default-568h@2x.png */; };
+		C38F972F1DCE384A00BD113D /* Trimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38F972D1DCE384A00BD113D /* Trimmer.swift */; };
+		C38F97301DCE384A00BD113D /* VideoLoopController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38F972E1DCE384A00BD113D /* VideoLoopController.swift */; };
+		C38F97351DCE3FF000BD113D /* btnRegister.png in Resources */ = {isa = PBXBuildFile; fileRef = C38F97311DCE3FF000BD113D /* btnRegister.png */; };
+		C38F97361DCE3FF000BD113D /* btnSignin.png in Resources */ = {isa = PBXBuildFile; fileRef = C38F97321DCE3FF000BD113D /* btnSignin.png */; };
+		C38F97371DCE3FF000BD113D /* Museo500-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C38F97331DCE3FF000BD113D /* Museo500-Regular.otf */; };
+		C38F97381DCE3FF000BD113D /* test.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C38F97341DCE3FF000BD113D /* test.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +48,14 @@
 		C36BB3001DCE309200D07F7A /* VideoLoopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoLoopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C36BB3041DCE309200D07F7A /* VideoLoopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLoopUITests.swift; sourceTree = "<group>"; };
 		C36BB3061DCE309200D07F7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C38F97271DCE329C00BD113D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		C38F972B1DCE384100BD113D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
+		C38F972D1DCE384A00BD113D /* Trimmer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Trimmer.swift; path = Source/Trimmer.swift; sourceTree = "<group>"; };
+		C38F972E1DCE384A00BD113D /* VideoLoopController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoLoopController.swift; path = Source/VideoLoopController.swift; sourceTree = "<group>"; };
+		C38F97311DCE3FF000BD113D /* btnRegister.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btnRegister.png; path = Resources/btnRegister.png; sourceTree = "<group>"; };
+		C38F97321DCE3FF000BD113D /* btnSignin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btnSignin.png; path = Resources/btnSignin.png; sourceTree = "<group>"; };
+		C38F97331DCE3FF000BD113D /* Museo500-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Museo500-Regular.otf"; path = "Resources/Museo500-Regular.otf"; sourceTree = "<group>"; };
+		C38F97341DCE3FF000BD113D /* test.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = test.mp4; path = Resources/test.mp4; sourceTree = "<group>"; };
+		C38F973A1DCE800500BD113D /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,11 +86,11 @@
 		C36BB2D81DCE309100D07F7A = {
 			isa = PBXGroup;
 			children = (
-				C38F97271DCE329C00BD113D /* Default-568h@2x.png */,
 				C36BB2E31DCE309100D07F7A /* VideoLoop */,
 				C36BB2F81DCE309200D07F7A /* VideoLoopTests */,
 				C36BB3031DCE309200D07F7A /* VideoLoopUITests */,
 				C36BB2E21DCE309100D07F7A /* Products */,
+				C38F97391DCE800500BD113D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +109,8 @@
 			children = (
 				C36BB2E41DCE309100D07F7A /* AppDelegate.swift */,
 				C36BB2E61DCE309100D07F7A /* ViewController.swift */,
+				C38F97291DCE382100BD113D /* Source */,
+				C38F972A1DCE382600BD113D /* Resources */,
 				C36BB2F01DCE309100D07F7A /* Info.plist */,
 			);
 			path = VideoLoop;
@@ -117,6 +132,35 @@
 				C36BB3061DCE309200D07F7A /* Info.plist */,
 			);
 			path = VideoLoopUITests;
+			sourceTree = "<group>";
+		};
+		C38F97291DCE382100BD113D /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				C38F972D1DCE384A00BD113D /* Trimmer.swift */,
+				C38F972E1DCE384A00BD113D /* VideoLoopController.swift */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		C38F972A1DCE382600BD113D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C38F97311DCE3FF000BD113D /* btnRegister.png */,
+				C38F97321DCE3FF000BD113D /* btnSignin.png */,
+				C38F97331DCE3FF000BD113D /* Museo500-Regular.otf */,
+				C38F97341DCE3FF000BD113D /* test.mp4 */,
+				C38F972B1DCE384100BD113D /* Default-568h@2x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C38F97391DCE800500BD113D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C38F973A1DCE800500BD113D /* AVKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,7 +273,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C38F97281DCE329C00BD113D /* Default-568h@2x.png in Resources */,
+				C38F97371DCE3FF000BD113D /* Museo500-Regular.otf in Resources */,
+				C38F972C1DCE384100BD113D /* Default-568h@2x.png in Resources */,
+				C38F97351DCE3FF000BD113D /* btnRegister.png in Resources */,
+				C38F97381DCE3FF000BD113D /* test.mp4 in Resources */,
+				C38F97361DCE3FF000BD113D /* btnSignin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +303,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C36BB2E71DCE309100D07F7A /* ViewController.swift in Sources */,
+				C38F97301DCE384A00BD113D /* VideoLoopController.swift in Sources */,
+				C38F972F1DCE384A00BD113D /* Trimmer.swift in Sources */,
 				C36BB2E51DCE309100D07F7A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
