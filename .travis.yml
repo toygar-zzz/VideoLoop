@@ -1,0 +1,4 @@
+language: objective-c
+osx_image: xcode8
+xcodebuild: xctool -project VideoLoop.xcodeproj -scheme VideoLoop build
+xcode_scheme: VideoLoopTests

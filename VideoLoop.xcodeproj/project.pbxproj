@@ -9,11 +9,9 @@
 /* Begin PBXBuildFile section */
 		C36BB2E51DCE309100D07F7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36BB2E41DCE309100D07F7A /* AppDelegate.swift */; };
 		C36BB2E71DCE309100D07F7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36BB2E61DCE309100D07F7A /* ViewController.swift */; };
-		C36BB2EA1DCE309100D07F7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C36BB2E81DCE309100D07F7A /* Main.storyboard */; };
-		C36BB2EC1DCE309100D07F7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C36BB2EB1DCE309100D07F7A /* Assets.xcassets */; };
-		C36BB2EF1DCE309100D07F7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C36BB2ED1DCE309100D07F7A /* LaunchScreen.storyboard */; };
 		C36BB2FA1DCE309200D07F7A /* VideoLoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36BB2F91DCE309200D07F7A /* VideoLoopTests.swift */; };
 		C36BB3051DCE309200D07F7A /* VideoLoopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36BB3041DCE309200D07F7A /* VideoLoopUITests.swift */; };
+		C38F97281DCE329C00BD113D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C38F97271DCE329C00BD113D /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +35,6 @@
 		C36BB2E11DCE309100D07F7A /* VideoLoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoLoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C36BB2E41DCE309100D07F7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C36BB2E61DCE309100D07F7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C36BB2E91DCE309100D07F7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C36BB2EB1DCE309100D07F7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C36BB2EE1DCE309100D07F7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C36BB2F01DCE309100D07F7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C36BB2F51DCE309200D07F7A /* VideoLoopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoLoopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C36BB2F91DCE309200D07F7A /* VideoLoopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLoopTests.swift; sourceTree = "<group>"; };
@@ -47,6 +42,7 @@
 		C36BB3001DCE309200D07F7A /* VideoLoopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoLoopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C36BB3041DCE309200D07F7A /* VideoLoopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLoopUITests.swift; sourceTree = "<group>"; };
 		C36BB3061DCE309200D07F7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C38F97271DCE329C00BD113D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +73,7 @@
 		C36BB2D81DCE309100D07F7A = {
 			isa = PBXGroup;
 			children = (
+				C38F97271DCE329C00BD113D /* Default-568h@2x.png */,
 				C36BB2E31DCE309100D07F7A /* VideoLoop */,
 				C36BB2F81DCE309200D07F7A /* VideoLoopTests */,
 				C36BB3031DCE309200D07F7A /* VideoLoopUITests */,
@@ -99,9 +96,6 @@
 			children = (
 				C36BB2E41DCE309100D07F7A /* AppDelegate.swift */,
 				C36BB2E61DCE309100D07F7A /* ViewController.swift */,
-				C36BB2E81DCE309100D07F7A /* Main.storyboard */,
-				C36BB2EB1DCE309100D07F7A /* Assets.xcassets */,
-				C36BB2ED1DCE309100D07F7A /* LaunchScreen.storyboard */,
 				C36BB2F01DCE309100D07F7A /* Info.plist */,
 			);
 			path = VideoLoop;
@@ -235,9 +229,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C36BB2EF1DCE309100D07F7A /* LaunchScreen.storyboard in Resources */,
-				C36BB2EC1DCE309100D07F7A /* Assets.xcassets in Resources */,
-				C36BB2EA1DCE309100D07F7A /* Main.storyboard in Resources */,
+				C38F97281DCE329C00BD113D /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,25 +289,6 @@
 			targetProxy = C36BB3011DCE309200D07F7A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		C36BB2E81DCE309100D07F7A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C36BB2E91DCE309100D07F7A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C36BB2ED1DCE309100D07F7A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C36BB2EE1DCE309100D07F7A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C36BB3071DCE309200D07F7A /* Debug */ = {
@@ -414,26 +387,28 @@
 		C36BB30A1DCE309200D07F7A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FE564LHY5H;
 				INFOPLIST_FILE = VideoLoop/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pidynamics.VideoLoop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		C36BB30B1DCE309200D07F7A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FE564LHY5H;
 				INFOPLIST_FILE = VideoLoop/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pidynamics.VideoLoop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -514,6 +489,7 @@
 				C36BB30B1DCE309200D07F7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C36BB30C1DCE309200D07F7A /* Build configuration list for PBXNativeTarget "VideoLoopTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +498,7 @@
 				C36BB30E1DCE309200D07F7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C36BB30F1DCE309200D07F7A /* Build configuration list for PBXNativeTarget "VideoLoopUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +507,7 @@
 				C36BB3111DCE309200D07F7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
