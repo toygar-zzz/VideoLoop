@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: VideoLoopController {
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
     let url = NSURL.fileURL(withPath: Bundle.main.path(forResource: "test", ofType: "mp4")!)
@@ -22,20 +22,20 @@ class ViewController: VideoLoopController {
     self.alpha = 0.9
     self.backgroundColor = UIColor.black
     self.contentURL = url as NSURL
-    
+
     // Sample UI
     var sampleButton = UIButton(frame: CGRect(x: 15.0, y: 500.0, width: 140.0, height: 42.0))
     sampleButton.setImage(UIImage(named: "btnSignin"), for: .normal)
     sampleButton.layer.cornerRadius = 2
     sampleButton.layer.masksToBounds = true
     view.addSubview(sampleButton)
-    
+
     sampleButton = UIButton(frame: CGRect(x: 165.0, y: 500.0, width: 140.0, height: 42.0))
     sampleButton.setImage(UIImage(named: "btnRegister"), for: .normal)
     sampleButton.layer.cornerRadius = 2
     sampleButton.layer.masksToBounds = true
     view.addSubview(sampleButton)
-    
+
     let text = UILabel(frame: CGRect(x: 0.0, y: 100.0, width: 320.0, height: 100.0))
     text.font = UIFont(name: "Museo500-Regular", size: 30)
     text.textAlignment = .center
@@ -43,7 +43,7 @@ class ViewController: VideoLoopController {
     text.text = "VideoSplash"
     view.addSubview(text)
   }
-  
+
   override var prefersStatusBarHidden: Bool {
     return true
   }

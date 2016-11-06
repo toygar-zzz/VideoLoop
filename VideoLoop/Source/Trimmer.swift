@@ -14,23 +14,29 @@ extension String {
 }
 
 public class Trimmer: NSObject {
-  
+
   /**
    Block based method for crop video url
-   
+
    @param videoUrl Video url
    @param startTime The starting point of the video segments
    @param duration Total time, video length
-   
+
    */
-  public func cropVideoWithUrl(videoUrl url: URL, startTime: CGFloat, duration: CGFloat, completion: ((_ videoPath:URL?, _ error: NSError?) -> Void)?) {
+  public func cropVideoWithUrl(
+    videoUrl url: URL,
+    startTime: CGFloat,
+    duration: CGFloat,
+    completion: ((_ videoPath: URL?, _ error: NSError?) -> Void)?) {
     DispatchQueue.global().async {
       let asset = AVURLAsset(url: url, options: nil)
       let outputPath = NSTemporaryDirectory()
       let fileManager = FileManager.default
-      guard let exportSession = AVAssetExportSession(asset: asset, presetName: "AVAssetExportPresetHighestQuality") else { return }
+      guard let exportSession = AVAssetExportSession(
+        asset: asset,
+        presetName: "AVAssetExportPresetHighestQuality") else { return }
       let outputFilePath = outputPath.convert.appendingPathComponent("output.mp4")
-      
+
       if fileManager.fileExists(atPath: outputFilePath) {
         do {
           try fileManager.removeItem(atPath: outputFilePath)
@@ -39,8 +45,10 @@ public class Trimmer: NSObject {
         }
       }
       do {
-        try fileManager.createDirectory(atPath:outputPath, withIntermediateDirectories: true, attributes: nil) }
-      catch let error {
+        try fileManager.createDirectory(
+          atPath:outputPath,
+          withIntermediateDirectories: true,
+          attributes: nil) } catch let error {
         print(error)
       }
       let start = CMTimeMakeWithSeconds(Float64(startTime), 600)

@@ -17,7 +17,7 @@ public enum ScalingMode {
 }
 
 public class VideoLoopController: UIViewController {
-  
+
   private let moviePlayer = AVPlayerViewController()
   private var moviePlayerSoundLevel: Float = 1.0
   public var contentURL: NSURL = NSURL() {
@@ -25,7 +25,7 @@ public class VideoLoopController: UIViewController {
       setMoviePlayer(url: contentURL)
     }
   }
-  
+
   public var videoFrame: CGRect = CGRect()
   public var startTime: CGFloat = 0.0
   public var duration: CGFloat = 0.0
@@ -38,7 +38,7 @@ public class VideoLoopController: UIViewController {
     didSet {
       if sound {
         moviePlayerSoundLevel = 1.0
-      }else{
+      } else {
         moviePlayerSoundLevel = 0.0
       }
     }
@@ -51,10 +51,11 @@ public class VideoLoopController: UIViewController {
   public var alwaysRepeat: Bool = true {
     didSet {
       if alwaysRepeat {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(VideoLoopController.playerItemDidReachEnd),
-                                               name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
-                                               object: moviePlayer.player?.currentItem)
+        NotificationCenter.default.addObserver(
+          self,
+          selector: #selector(VideoLoopController.playerItemDidReachEnd),
+          name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
+          object: moviePlayer.player?.currentItem)
       }
     }
   }
@@ -70,32 +71,33 @@ public class VideoLoopController: UIViewController {
       }
     }
   }
-  
+
   public var restartForeground: Bool = false {
     didSet {
       if restartForeground {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(VideoLoopController.playerItemDidReachEnd),
-                                               name: NSNotification.Name.UIApplicationWillEnterForeground,
-                                               object: nil)
+        NotificationCenter.default.addObserver(
+          self,
+          selector: #selector(VideoLoopController.playerItemDidReachEnd),
+          name: NSNotification.Name.UIApplicationWillEnterForeground,
+          object: nil)
       }
     }
   }
-  
+
   override public func viewDidAppear(_ animated: Bool) {
     moviePlayer.view.frame = videoFrame
-    moviePlayer.view.backgroundColor = self.backgroundColor;
+    moviePlayer.view.backgroundColor = self.backgroundColor
     moviePlayer.showsPlaybackControls = false
     moviePlayer.view.isUserInteractionEnabled = false
     view.addSubview(moviePlayer.view)
     view.sendSubview(toBack: moviePlayer.view)
   }
-  
+
   override public func viewWillDisappear(_ animated: Bool) {
     super.viewDidDisappear(animated)
   }
-  
-  private func setMoviePlayer(url: NSURL){
+
+  private func setMoviePlayer(url: NSURL) {
     let videoCutter = Trimmer()
     videoCutter.cropVideoWithUrl(
       videoUrl: url as URL,
@@ -116,7 +118,7 @@ public class VideoLoopController: UIViewController {
         }
     }
   }
-  
+
   public func observeValueForKeyPath(
     keyPath: String?,
     ofObject object: AnyObject?,
@@ -131,37 +133,37 @@ public class VideoLoopController: UIViewController {
     if realObject as? AVPlayer != self.moviePlayer.player || keyPath! != "status" {
       return
     }
-    if self.moviePlayer.player?.status == AVPlayerStatus.readyToPlay{
+    if self.moviePlayer.player?.status == AVPlayerStatus.readyToPlay {
       self.movieReadyToPlay()
     }
   }
-  
-  deinit{
+
+  deinit {
     self.moviePlayer.player?.removeObserver(self, forKeyPath: "status")
     NotificationCenter.default.removeObserver(self)
-    
+
   }
-  
+
   // Override in subclass
   public func movieReadyToPlay() { }
-  
+
   override public func viewDidLoad() {
     super.viewDidLoad()
   }
-  
+
   override public func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
-  
+
   func playerItemDidReachEnd() {
     moviePlayer.player?.seek(to: kCMTimeZero)
     moviePlayer.player?.play()
   }
-  
+
   func playVideo() {
     moviePlayer.player?.play()
   }
-  
+
   func pauseVideo() {
     moviePlayer.player?.pause()
   }
