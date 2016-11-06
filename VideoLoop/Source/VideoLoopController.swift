@@ -17,7 +17,7 @@ public enum ScalingMode {
 }
 
 public class VideoLoopController: UIViewController {
-
+  
   private let moviePlayer = AVPlayerViewController()
   private var moviePlayerSoundLevel: Float = 1.0
   public var contentURL: NSURL = NSURL() {
@@ -25,7 +25,7 @@ public class VideoLoopController: UIViewController {
       setMoviePlayer(url: contentURL)
     }
   }
-
+  
   public var videoFrame: CGRect = CGRect()
   public var startTime: CGFloat = 0.0
   public var duration: CGFloat = 0.0
@@ -52,9 +52,9 @@ public class VideoLoopController: UIViewController {
     didSet {
       if alwaysRepeat {
         NotificationCenter.default.addObserver(self,
-          selector: #selector(VideoLoopController.playerItemDidReachEnd),
-          name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
-          object: moviePlayer.player?.currentItem)
+                                               selector: #selector(VideoLoopController.playerItemDidReachEnd),
+                                               name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
+                                               object: moviePlayer.player?.currentItem)
       }
     }
   }
@@ -70,18 +70,18 @@ public class VideoLoopController: UIViewController {
       }
     }
   }
-    
-   public var restartForeground: Bool = false {
-        didSet {
-            if restartForeground {
-                NotificationCenter.default.addObserver(self,
-                    selector: #selector(VideoLoopController.playerItemDidReachEnd),
-                    name: NSNotification.Name.UIApplicationWillEnterForeground,
-                    object: nil)
-            }
-        }
+  
+  public var restartForeground: Bool = false {
+    didSet {
+      if restartForeground {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(VideoLoopController.playerItemDidReachEnd),
+                                               name: NSNotification.Name.UIApplicationWillEnterForeground,
+                                               object: nil)
+      }
     }
-
+  }
+  
   override public func viewDidAppear(_ animated: Bool) {
     moviePlayer.view.frame = videoFrame
     moviePlayer.view.backgroundColor = self.backgroundColor;
@@ -90,78 +90,78 @@ public class VideoLoopController: UIViewController {
     view.addSubview(moviePlayer.view)
     view.sendSubview(toBack: moviePlayer.view)
   }
-
+  
   override public func viewWillDisappear(_ animated: Bool) {
     super.viewDidDisappear(animated)
   }
-
+  
   private func setMoviePlayer(url: NSURL){
     let videoCutter = Trimmer()
     videoCutter.cropVideoWithUrl(
       videoUrl: url as URL,
       startTime: startTime,
       duration: duration) { (videoPath, error) -> Void in
-      if let path = videoPath as NSURL? {
-        let queue = DispatchQueue(label: "com.pidynamics.videoplayer")
-        queue.async {
-          self.moviePlayer.player = AVPlayer(url: path as URL)
-          self.moviePlayer.player?.addObserver(
-            self,
-            forKeyPath: "status",
-            options: .new,
-            context: nil)
-          self.moviePlayer.player?.play()
-          self.moviePlayer.player?.volume = self.moviePlayerSoundLevel
+        if let path = videoPath as NSURL? {
+          let queue = DispatchQueue(label: "com.pidynamics.videoplayer")
+          queue.async {
+            self.moviePlayer.player = AVPlayer(url: path as URL)
+            self.moviePlayer.player?.addObserver(
+              self,
+              forKeyPath: "status",
+              options: .new,
+              context: nil)
+            self.moviePlayer.player?.play()
+            self.moviePlayer.player?.volume = self.moviePlayerSoundLevel
+          }
         }
-      }
     }
   }
-
+  
   public func observeValueForKeyPath(
     keyPath: String?,
     ofObject object: AnyObject?,
     change: [String : AnyObject]?,
     context: UnsafeMutableRawPointer) {
-      guard let realObject = object, object != nil else {
-        return
-      }
-      if !realObject.isKind(of: AVPlayer.self) {
-        return
-      }
-      if realObject as? AVPlayer != self.moviePlayer.player || keyPath! != "status" {
-        return
-      }
-      if self.moviePlayer.player?.status == AVPlayerStatus.readyToPlay{
-        self.movieReadyToPlay()
-      }
+    guard let realObject = object, object != nil else {
+      return
+    }
+    if !realObject.isKind(of: AVPlayer.self) {
+      return
+    }
+    if realObject as? AVPlayer != self.moviePlayer.player || keyPath! != "status" {
+      return
+    }
+    if self.moviePlayer.player?.status == AVPlayerStatus.readyToPlay{
+      self.movieReadyToPlay()
+    }
   }
-
+  
   deinit{
-	self.moviePlayer.player?.removeObserver(self, forKeyPath: "status")
+    self.moviePlayer.player?.removeObserver(self, forKeyPath: "status")
     NotificationCenter.default.removeObserver(self)
-
+    
   }
-
+  
   // Override in subclass
   public func movieReadyToPlay() { }
-
+  
   override public func viewDidLoad() {
     super.viewDidLoad()
   }
-
+  
   override public func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
-
+  
   func playerItemDidReachEnd() {
     moviePlayer.player?.seek(to: kCMTimeZero)
     moviePlayer.player?.play()
   }
-
+  
   func playVideo() {
     moviePlayer.player?.play()
   }
-
+  
   func pauseVideo() {
     moviePlayer.player?.pause()
   }

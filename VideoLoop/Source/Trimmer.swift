@@ -14,15 +14,15 @@ extension String {
 }
 
 public class Trimmer: NSObject {
-
+  
   /**
-  Block based method for crop video url
-
-  @param videoUrl Video url
-  @param startTime The starting point of the video segments
-  @param duration Total time, video length
-
-  */
+   Block based method for crop video url
+   
+   @param videoUrl Video url
+   @param startTime The starting point of the video segments
+   @param duration Total time, video length
+   
+   */
   public func cropVideoWithUrl(videoUrl url: URL, startTime: CGFloat, duration: CGFloat, completion: ((_ videoPath:URL?, _ error: NSError?) -> Void)?) {
     DispatchQueue.global().async {
       let asset = AVURLAsset(url: url, options: nil)

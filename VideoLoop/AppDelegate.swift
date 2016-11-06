@@ -10,10 +10,10 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+  
   var window: UIWindow?
   public let viewController = ViewController()
-
+  
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     self.window = UIWindow(frame: UIScreen.main.bounds)
     self.window!.rootViewController = viewController
@@ -22,19 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     return true
   }
   
-  @nonobjc func applicationWillResignActive(application: UIApplication) {  }
-  
-  @nonobjc func applicationDidEnterBackground(application: UIApplication) {
+  func applicationDidEnterBackground(_ application: UIApplication) {
     viewController.pauseVideo()
   }
   
-  @nonobjc func applicationWillEnterForeground(application: UIApplication) {
+  func applicationWillEnterForeground(_ application: UIApplication) {
     viewController.playVideo()
   }
   
-  @nonobjc func applicationDidBecomeActive(application: UIApplication) { }
-  
-  @nonobjc func applicationWillTerminate(application: UIApplication) { }
-
 }
 
