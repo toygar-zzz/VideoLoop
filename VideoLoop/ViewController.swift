@@ -17,9 +17,9 @@ class ViewController: VideoLoopController {
     self.fillMode = .ResizeAspectFill
     self.alwaysRepeat = true
     self.sound = true
-    self.startTime = 12.0
-    self.duration = 4.0
-    self.alpha = 0.7
+    self.startTime = 0.0
+    self.duration = 2.0
+    self.alpha = 0.9
     self.backgroundColor = UIColor.black
     self.contentURL = url as NSURL
     

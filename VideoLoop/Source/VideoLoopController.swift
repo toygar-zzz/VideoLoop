@@ -98,7 +98,7 @@ public class VideoLoopController: UIViewController {
   private func setMoviePlayer(url: NSURL){
     let videoCutter = Trimmer()
     videoCutter.cropVideoWithUrl(
-      videoUrl: url,
+      videoUrl: url as URL,
       startTime: startTime,
       duration: duration) { (videoPath, error) -> Void in
       if let path = videoPath as NSURL? {
